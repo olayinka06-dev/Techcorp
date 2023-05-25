@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+}
+.hero{
+    width: 100%;
+    background-color: #37517e;
+}
+nav{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 10vh;
+}
+nav h1{
+    color: white;
+}
+.nav-desktop{
+    list-style: none;
+}
+.nav-link {
+    display: inline-block;
+    margin-right: 2rem;
+    position: relative;
+}
+.nav-link::after {
+    content: "";
+    background-color: white;
+    height: 2px;
+    left: 0;
+    position: absolute;
+    top: 110%;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+    width: 100%;
+}
+
+.nav-link:hover::after {
+    background-color: white;
+    transform: scaleX(1);
+}
+.nav-link a{
+    text-decoration: none;
+    color: white;
+}
+.nav-mobile{
+    display: none;
+}
+.aliner{
+    display: none;
+}
+.toggle{
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    width: 30px;
+    height: 30px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    transition: all .2s ease-in-out;
+    z-index: 1000;
+
+}
+.toggle div{
+    background-color: white;
+    height: 2px;
+    width: 30px;
+    transition: all .4s ease-in-out;
+    
+}
+.firstr{
+    transform: rotate(-45deg) translate(1px, 11px);
+    width: 33px;
+    transition: all .4s ease-in-out;
+
+}
+.thirdr{
+    transform: rotate(45deg) translate(1px, -11px);
+    width: 33px;
+    transition: all .4s ease-in-out;
+
+}
+.secondr{
+    opacity: 0;
+}
+.container{
+    /* width: 100%; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 20px;
+
+}
+.first{
+    width: 100%;
+    color: white;
+    text-transform: capitalize;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+}
+.first h1{
+    font-size: 30px;
+}
+.second{
+    width: 100%;
+}
+
+
+@media screen and (max-width: 950px) {
+    .hero{
+        height: 100vh;
+        padding-top: 20px;
+        padding-bottom: 40px;
+    }
+    nav{
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+    .nav-desktop{
+        display: none;
+    }
+    .nav-link{
+        margin: 0;
+    }
+    .nav-link:hover::after {
+        background-color: #3867b9;
+    }
+    .container{
+        flex-direction: column-reverse;
+    }
+    .second img{
+        width: 100%;
+    }
+    .toggle{
+        display: flex;
+    }
+    .aliner{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+    .nav-mobile{
+        display: flex;
+        flex-direction: column;
+        height: 0;
+        width: 60%;
+        align-items: center;
+        position: absolute;
+        justify-content: center;
+        gap: 20px;
+        top: 13%;
+        left: 22%;
+        background-color: rgb(2,59,109);
+        overflow: hidden;
+        transition: all .5s ease;
+        color: white;
+    }
+    .mobile-toggler{
+        height: 40vh;
+    }
+    .first{
+        text-align: center;
+    }
+    .first h1{
+        font-size: 22px;
+    }
+}
